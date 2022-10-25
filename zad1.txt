@@ -1,0 +1,471 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+Cloning into 'volar'...
+remote: Enumerating objects: 38069, done.
+remote: Counting objects: 100% (2024/2024), done.
+remote: Compressing objects: 100% (566/566), done.
+Resolving deltas: 100% (28178/28178), done.
+PS D:\Projekty> cd .\volar\
+PS D:\Projekty\volar> git clone git@gitlab.com:patryk_walach/kontrola.git
+Cloning into 'kontrola'...
+The authenticity of host 'gitlab.com (172.65.251.78)' can't be established.
+ED25519 key fingerprint is SHA256:eUXGGm1YGsMAS7vkcx6JOJdOGHPem5gQp4taiCfCLB8.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\Projekty\volar> git clone git@gitlab.com:patryk_walach/kontrola.git
+Cloning into 'kontrola'...
+The authenticity of host 'gitlab.com (172.65.251.78)' can't be established.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'gitlab.com' (ED25519) to the list of known hosts.
+warning: You appear to have cloned an empty repository.
+PS D:\Projekty\volar> cd kontrola
+PS D:\Projekty\volar\kontrola> git switch -c master
+Switched to a new branch 'master'
+PS D:\Projekty\volar\kontrola> echo "Sara" > touch smile.txt
+PS D:\Projekty\volar\kontrola> echo "Sara" > smile.txt
+PS D:\Projekty\volar\kontrola> echo "" > smile.txt
+PS D:\Projekty\volar\kontrola> cat smile.txt
+
+PS D:\Projekty\volar\kontrola> git add .\smile.txt
+PS D:\Projekty\volar\kontrola> git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 247 bytes | 247.00 KiB/s, done.
+To gitlab.com:patryk_walach/kontrola.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS D:\Projekty\volar\kontrola> echo "Sara" > smile.txt
+PS D:\Projekty\volar\kontrola> git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+PS D:\Projekty\volar\kontrola> git commit -m "Zmiana (Sara)"
+[master 442048f] Zmiana (Sara)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS D:\Projekty\volar\kontrola> touch jeden.txt dwa.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operabl
+e program. Check the spelling of the name, or if a path was included, verify that the path is correct
+ and try again.
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (touch:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+Suggestion [3,General]: The command touch was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\touch". See "get-help about_Command_Precedence" for more details.
+PS D:\Projekty\volar\kontrola> touch jeden.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operabl
+ and try again.
++ touch jeden.txt
+
+Suggestion [3,General]: The command touch was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\touch". See "get-help about_Command_Precedence" for more details.
+PS D:\Projekty\volar\kontrola> echo "" > jeden.txt
+PS D:\Projekty\volar\kontrola> echo "" > dwa.txt
+PS D:\Projekty\volar\kontrola> git add .\jeden.txt .\dwa.txt
+PS D:\Projekty\volar\kontrola> git commit -m "Dodane pliki (JD)"
+[master 66ea1f2] Dodane pliki (JD)
+Enumerating objects: 7, done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 561 bytes | 561.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To gitlab.com:patryk_walach/kontrola.git
+   81592d8..66ea1f2  master -> master
+PS D:\Projekty\volar\kontrola> cd ..
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+Receiving objects: 100% (8/8), done.
+Resolving deltas: 100% (1/1), done.
+PS D:\Projekty\volar> cd .\drugi\
+PS D:\Projekty\volar\drugi> mkdir zdalne
+
+
+    Directory: D:\Projekty\volar\drugi
+
+----                 -------------         ------ ----
+d-----        24.10.2022     20:05                zdalne
+
+
+PS D:\Projekty\volar\drugi> git origin
+git: 'origin' is not a git command. See 'git --help'.
+PS D:\Projekty\volar\drugi> git remote
+origin
+PS D:\Projekty\volar\drugi> git remote > .\zdalne\repos.txt
+PS D:\Projekty\volar\drugi> git add .\zdalne\repos.txt
+PS D:\Projekty\volar\drugi> git push
+Everything up-to-date
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\Projekty\volar\pierwszy:String) [Set-Location], It
+   emNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS D:\Projekty\volar\drugi> cd .
+PS D:\Projekty\volar\drugi> cd ..
+PS D:\Projekty\volar> cd .\kontrola\
+PS D:\Projekty\volar\kontrola> git pull
+Already up to date.
+PS D:\Projekty\volar\kontrola> git remote > .\zdalne\prepos.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS D:\Projekty\volar\kontrola> cd ..\drugi\
+PS D:\Projekty\volar\drugi> git commit -m "Dodane (repos)"
+[master 5b6bffa] Dodane (repos)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/repos.txt
+PS D:\Projekty\volar\drugi> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (4/4), 361 bytes | 361.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+To gitlab.com:patryk_walach/kontrola.git
+PS D:\Projekty\volar\drugi> cd ..\kontrola\
+PS D:\Projekty\volar\kontrola> git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 341 bytes | 1024 bytes/s, done.
+From gitlab.com:patryk_walach/kontrola
+ zdalne/repos.txt | Bin 0 -> 18 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/repos.txt
+PS D:\Projekty\volar\kontrola> git remote > .\zdalne\prepos.txt
+PS D:\Projekty\volar\kontrola> cd .\zdalne\
+PS D:\Projekty\volar\kontrola\zdalne> ls > .\prepos.txt
+PS D:\Projekty\volar\kontrola\zdalne> cat .\prepos.txt
+
+
+    Directory: D:\Projekty\volar\kontrola\zdalne
+
+
+-a----        24.10.2022     20:13             18 repos.txt
+
+
+PS D:\Projekty\volar\kontrola\zdalne> cd ..
+PS D:\Projekty\volar\kontrola> git remote >> .\zdalne\prepos.txt
+PS D:\Projekty\volar\kontrola> cat .\zdalne\prepos.txt
+
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        24.10.2022     20:15              0 prepos.txt
+-a----        24.10.2022     20:13             18 repos.txt
+
+
+origin
+PS D:\Projekty\volar\kontrola> git add .\zdalne\prepos.txt
+Writing objects: 100% (4/4), 566 bytes | 566.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+To gitlab.com:patryk_walach/kontrola.git
+   5b6bffa..77bd3d6  master -> master
+PS D:\Projekty\volar\kontrola> cd ..
+PS D:\Projekty\volar> cd .\drugi\
+PS D:\Projekty\volar\drugi> git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 546 bytes | 2.00 KiB/s, done.
+From gitlab.com:patryk_walach/kontrola
+   5b6bffa..77bd3d6  master     -> origin/master
+ zdalne/prepos.txt | Bin 0 -> 966 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/prepos.txt
+PS D:\Projekty\volar\drugi> echo "" > toignore.txt
+PS D:\Projekty\volar\drugi> git status > toignore.txt
+PS D:\Projekty\volar\drugi> cat .\toignore.txt
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        toignore.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Projekty\volar\drugi> echo "toignore.txt" > .gitignore
+On branch master
+Your branch is up to date with 'origin/master'.
+
+        .gitignore
+        toignore.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\Projekty\volar\drugi> echo "" > .\zdalne\jeden.pdf
+PS D:\Projekty\volar\drugi> echo "" > .\zdalne\dwa.txt
+PS D:\Projekty\volar\drugi> echo "" > .\zdalne\trzy.png
+PS D:\Projekty\volar\drugi> git add .\zdalne\jeden.pdf .\zdalne\dwa.txt .\zdalne\trzy.png
+PS D:\Projekty\volar\drugi> echo "**\*.pdf" >> .gitignore
+PS D:\Projekty\volar\drugi> echo "**\*.png" >> .gitignore
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> echo "" > jeden.pdf
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        jeden.pdf
+PS D:\Projekty\volar\drugi> cat .\.gitignore
+toignore.txt
+**\*.pdf
+**\*.png
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        jeden.pdf
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> code .\.gitignore
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        jeden.pdf
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> add .\jeden.pdf
+add : The term 'add' is not recognized as the name of a cmdlet, function, script file, or operable pr
+ogram. Check the spelling of the name, or if a path was included, verify that the path is correct and
+ try again.
+At line:1 char:1
++ add .\jeden.pdf
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (add:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Projekty\volar\drugi> git add .\jeden.pdf
+PS D:\Projekty\volar\drugi> git remove .\jeden.pdf
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+PS D:\Projekty\volar\drugi> rm .\jeden.pdf
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   jeden.pdf
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    jeden.pdf
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> git restore --staged .\jeden.txt
+The most similar commands are
+        status
+        stage
+        stash
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   jeden.pdf
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    jeden.pdf
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+  (use "git restore --staged <file>..." to unstage)
+        new file:   jeden.pdf
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/jeden.pdf
+        new file:   zdalne/trzy.png
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    jeden.pdf
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> git restore .\jeden.pdf
+PS D:\Projekty\volar\drugi> git restore --staged .\jeden.pdf
+PS D:\Projekty\volar\drugi> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   zdalne/dwa.txt
+        new file:   zdalne/trzy.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        jeden.pdf
+        toignore.txt
+
+PS D:\Projekty\volar\drugi> cat .\.git\
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\Projekty\volar\drugi\.git\:String) [Get-Content],
+   DirectoryNotFoundException
+    + FullyQualifiedErrorId : GetContentReaderDirectoryNotFoundError,Microsoft.PowerShell.Commands.G
+
+PS D:\Projekty\volar\drugi> cat .\.gitignore
+toignore.txt
+**/*.png
+PS D:\Projekty\volar\drugi> rm .\jeden.pdf
+PS D:\Projekty\volar\drugi> git commit -m "Ignorowanie"
+[master 71d34ee] Ignorowanie
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/dwa.txt
+ create mode 100644 zdalne/jeden.pdf
+ create mode 100644 zdalne/trzy.png
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    dwa.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        toignore.txt
+
+[master 2276c30] Usuwanie
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 dwa.txt
+PS D:\Projekty\volar\drugi> chore "linia1" > .\zdalne\merge.txt
+chore : The term 'chore' is not recognized as the name of a cmdlet, function, script file, or operabl
+e program. Check the spelling of the name, or if a path was included, verify that the path is correct
+ and try again.
+At line:1 char:1
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (chore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Projekty\volar\drugi> echo "linia1" > .\zdalne\merge.txt
+PS D:\Projekty\volar\drugi> git add .\zdalne\merge.txt
+PS D:\Projekty\volar\drugi> git commmit -m "Dodane (merge)"
+git: 'commmit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+PS D:\Projekty\volar\drugi> git commit -m "Dodane (merge)"
+[master a2482ee] Dodane (merge)
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/merge.txt
+PS D:\Projekty\volar\drugi> git push
+Enumerating objects: 11, done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 937 bytes | 937.00 KiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+To gitlab.com:patryk_walach/kontrola.git
+   77bd3d6..a2482ee  master -> master
+PS D:\Projekty\volar\drugi> cd ..\kontrola\
+PS D:\Projekty\volar\kontrola> echo "linia1" > .\zdalne\merge2.txt
+PS D:\Projekty\volar\kontrola> git add .\zdalne\merge2.txt
+PS D:\Projekty\volar\kontrola> git commit -m "Nowy plik"
+[master 8ef9ed3] Nowy plik
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 zdalne/merge2.txt
+PS D:\Projekty\volar\kontrola> git push
+To gitlab.com:patryk_walach/kontrola.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'gitlab.com:patryk_walach/kontrola.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS D:\Projekty\volar\kontrola> git push
+To gitlab.com:patryk_walach/kontrola.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'gitlab.com:patryk_walach/kontrola.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS D:\Projekty\volar\kontrola> git pull
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), 917 bytes | 0 bytes/s, done.
+From gitlab.com:patryk_walach/kontrola
+   77bd3d6..a2482ee  master     -> origin/master
+Merge made by the 'ort' strategy.
+ dwa.txt => zdalne/dwa.txt | Bin
+ zdalne/jeden.pdf          | Bin 0 -> 6 bytes
+ zdalne/merge.txt          | Bin 0 -> 18 bytes
+ zdalne/trzy.png           | Bin 0 -> 6 bytes
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ rename dwa.txt => zdalne/dwa.txt (100%)
+ create mode 100644 zdalne/jeden.pdf
+ create mode 100644 zdalne/merge.txt
+ create mode 100644 zdalne/trzy.png
+PS D:\Projekty\volar\kontrola> git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 628 bytes | 628.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+To gitlab.com:patryk_walach/kontrola.git
+   a2482ee..427cfff  master -> master
